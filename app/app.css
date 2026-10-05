@@ -35,8 +35,9 @@
 
   /* layers */
   --z-index-media: 1;
+  /* menu sits under the nav bar so its Close button stays reachable */
+  --z-index-menu: 40;
   --z-index-nav: 50;
-  --z-index-menu: 60;
   --z-index-cursor: 80;
   --z-index-curtain: 90;
 }
