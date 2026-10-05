@@ -1,0 +1,228 @@
+@import "tailwindcss";
+@import "@fontsource-variable/geist/wght.css";
+@import "@fontsource-variable/geist-mono/wght.css";
+
+/* Tokens (spec §9). Project pages override --bg / --fg / --accent only. */
+:root {
+  --bg: #0a0a0b;
+  --fg: #ecebe8;
+  --accent: #ff5a2b;
+  --ink: #050506;
+  color-scheme: dark;
+}
+
+@theme inline {
+  --font-sans: "Geist Variable", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "Geist Mono Variable", ui-monospace, "SF Mono", Menlo, monospace;
+
+  --color-bg: var(--bg);
+  --color-fg: var(--fg);
+  --color-accent: var(--accent);
+  --color-ink: var(--ink);
+  --color-muted: color-mix(in oklab, var(--fg) 68%, var(--bg));
+  --color-line: color-mix(in oklab, var(--fg) 16%, transparent);
+  --color-wash: color-mix(in oklab, var(--fg) 6%, transparent);
+
+  /* fluid type scale */
+  --text-mega: clamp(4.5rem, 19vw, 21rem);
+  --text-display: clamp(3.25rem, 11.4vw, 14rem);
+  --text-title: clamp(2.75rem, 8.2vw, 10rem);
+  --text-heading: clamp(2rem, 4.6vw, 5rem);
+  --text-lead: clamp(1.25rem, 1.9vw, 2rem);
+  --text-label: 0.75rem;
+
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+
+  /* layers */
+  --z-index-media: 1;
+  --z-index-nav: 50;
+  --z-index-menu: 60;
+  --z-index-cursor: 80;
+  --z-index-curtain: 90;
+}
+
+@layer base {
+  html {
+    background: var(--bg);
+    color: var(--fg);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    scrollbar-gutter: stable;
+  }
+  body {
+    min-height: 100dvh;
+    overflow-x: clip;
+    transition:
+      background-color 0.5s var(--ease-out-expo),
+      color 0.5s var(--ease-out-expo);
+    background: var(--bg);
+    color: var(--fg);
+  }
+  ::selection {
+    background: var(--accent);
+    color: var(--ink);
+  }
+  :focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 4px;
+  }
+  h1:focus {
+    outline: none;
+  }
+  img,
+  video {
+    display: block;
+    max-width: 100%;
+  }
+
+  /* Lenis */
+  html.lenis,
+  html.lenis body {
+    height: auto;
+  }
+  .lenis.lenis-smooth {
+    scroll-behavior: auto !important;
+  }
+  .lenis.lenis-stopped {
+    overflow: hidden;
+  }
+}
+
+@layer components {
+  /* page gutter */
+  .gutter {
+    padding-inline: clamp(1rem, 2.6vw, 3rem);
+  }
+
+  /* display type: tight, heavy, uppercase */
+  .type-display {
+    font-weight: 600;
+    letter-spacing: -0.045em;
+    line-height: 0.86;
+    text-transform: uppercase;
+  }
+
+  /* mono metadata */
+  .type-label {
+    font-family: var(--font-mono);
+    font-size: var(--text-label);
+    letter-spacing: 0.06em;
+    line-height: 1.4;
+    text-transform: uppercase;
+  }
+
+  /* underline that grows from the left on hover */
+  .link-line {
+    background-image: linear-gradient(currentColor, currentColor);
+    background-position: 0 100%;
+    background-repeat: no-repeat;
+    background-size: 0% 1px;
+    transition: background-size 0.5s var(--ease-out-expo);
+  }
+  .link-line:hover,
+  .link-line:focus-visible {
+    background-size: 100% 1px;
+  }
+
+  /* button: sharp corners everywhere, arrow nudges on hover */
+  .btn {
+    align-items: center;
+    border: 1px solid var(--fg);
+    display: inline-flex;
+    font-family: var(--font-mono);
+    font-size: var(--text-label);
+    gap: 0.75em;
+    letter-spacing: 0.06em;
+    line-height: 1;
+    padding: 1.05em 1.35em;
+    text-transform: uppercase;
+    transition:
+      background-color 0.35s var(--ease-out-expo),
+      color 0.35s var(--ease-out-expo),
+      transform 0.2s var(--ease-out-expo);
+    white-space: nowrap;
+  }
+  .btn:hover,
+  .btn:focus-visible {
+    background: var(--fg);
+    color: var(--bg);
+  }
+  .btn:active {
+    transform: scale(0.98);
+  }
+  .btn-solid {
+    background: var(--fg);
+    color: var(--bg);
+  }
+  .btn-solid:hover,
+  .btn-solid:focus-visible {
+    background: var(--accent);
+    border-color: var(--accent);
+    color: var(--ink);
+  }
+  .btn .arrow,
+  .arrow-host .arrow {
+    display: inline-block;
+    transition: transform 0.45s var(--ease-out-expo);
+  }
+  .btn:hover .arrow,
+  .arrow-host:hover .arrow {
+    transform: translate(0.2em, -0.2em);
+  }
+
+  /* first-paint entrance for above-the-fold type; runs without JS */
+  .rise {
+    display: block;
+    overflow: hidden;
+    padding-bottom: 0.06em;
+  }
+  .rise > span {
+    animation: rise 1s var(--ease-out-expo) both;
+    animation-delay: calc(var(--i, 0) * 90ms + 80ms);
+    display: block;
+    will-change: transform;
+  }
+  .fade-in {
+    animation: fade-in 1s var(--ease-out-expo) both;
+    animation-delay: calc(var(--i, 0) * 90ms + 80ms);
+  }
+}
+
+@keyframes rise {
+  from {
+    transform: translateY(108%);
+  }
+}
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .rise > span,
+  .fade-in {
+    animation-duration: 0.15s;
+    animation-delay: 0s;
+  }
+  .rise > span {
+    animation-name: fade-in-plain;
+  }
+  .fade-in {
+    animation-name: fade-in-plain;
+  }
+  .link-line,
+  .btn,
+  .btn .arrow,
+  .arrow-host .arrow,
+  body {
+    transition-duration: 0.01s;
+  }
+}
+@keyframes fade-in-plain {
+  from {
+    opacity: 0;
+  }
+}

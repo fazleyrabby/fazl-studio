@@ -1,0 +1,14 @@
+{
+  "name": "fazl-studio-capture",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "audit": "node scripts/audit.mjs",
+    "stills": "node scripts/stills.mjs",
+    "record": "node scripts/record.mjs"
+  },
+  "devDependencies": {
+    "playwright": "1.63.0",
+    "sharp": "^0.35.5"
+  }
+}

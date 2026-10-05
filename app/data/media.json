@@ -1,0 +1,597 @@
+{
+  "villa": {
+    "poster": {
+      "src": "/media/villa/poster-1280",
+      "width": 1280,
+      "height": 720
+    },
+    "preview": {
+      "src": "/media/villa/preview",
+      "width": 1280,
+      "height": 720,
+      "duration": 16.33,
+      "mp4KB": 1119,
+      "webmKB": 1059
+    },
+    "hero": {
+      "src": "/media/villa/hero",
+      "widths": [
+        1920,
+        960
+      ],
+      "width": 1920,
+      "height": 1080
+    },
+    "gallery": [
+      {
+        "src": "/media/villa/gallery/01",
+        "widths": [
+          1920,
+          960
+        ],
+        "width": 1920,
+        "height": 1080
+      },
+      {
+        "src": "/media/villa/gallery/02",
+        "widths": [
+          1920,
+          960
+        ],
+        "width": 1920,
+        "height": 1080
+      },
+      {
+        "src": "/media/villa/gallery/03",
+        "widths": [
+          1920,
+          960
+        ],
+        "width": 1920,
+        "height": 1080
+      }
+    ],
+    "mobile": [
+      {
+        "src": "/media/villa/mobile-01",
+        "widths": [
+          780
+        ],
+        "width": 780,
+        "height": 1688
+      },
+      {
+        "src": "/media/villa/mobile-02",
+        "widths": [
+          780
+        ],
+        "width": 780,
+        "height": 1688
+      },
+      {
+        "src": "/media/villa/mobile-03",
+        "widths": [
+          780
+        ],
+        "width": 780,
+        "height": 1688
+      }
+    ]
+  },
+  "stackd": {
+    "poster": {
+      "src": "/media/stackd/poster-1280",
+      "width": 1280,
+      "height": 720
+    },
+    "preview": {
+      "src": "/media/stackd/preview",
+      "width": 1280,
+      "height": 720,
+      "duration": 13.13,
+      "mp4KB": 1104,
+      "webmKB": 927
+    },
+    "film": {
+      "src": "/media/stackd/film",
+      "width": 1920,
+      "height": 1080,
+      "duration": 13.13,
+      "mp4KB": 5754,
+      "webmKB": 4527
+    },
+    "hero": {
+      "src": "/media/stackd/hero",
+      "widths": [
+        1920,
+        960
+      ],
+      "width": 1920,
+      "height": 1080
+    },
+    "gallery": [
+      {
+        "src": "/media/stackd/gallery/01",
+        "widths": [
+          1920,
+          960
+        ],
+        "width": 1920,
+        "height": 1080
+      },
+      {
+        "src": "/media/stackd/gallery/02",
+        "widths": [
+          1920,
+          960
+        ],
+        "width": 1920,
+        "height": 1080
+      },
+      {
+        "src": "/media/stackd/gallery/03",
+        "widths": [
+          1920,
+          960
+        ],
+        "width": 1920,
+        "height": 1080
+      },
+      {
+        "src": "/media/stackd/gallery/04",
+        "widths": [
+          1920,
+          960
+        ],
+        "width": 1920,
+        "height": 1080
+      },
+      {
+        "src": "/media/stackd/gallery/05",
+        "widths": [
+          1920,
+          960
+        ],
+        "width": 1920,
+        "height": 1080
+      }
+    ],
+    "mobile": [
+      {
+        "src": "/media/stackd/mobile-01",
+        "widths": [
+          780
+        ],
+        "width": 780,
+        "height": 1688
+      },
+      {
+        "src": "/media/stackd/mobile-02",
+        "widths": [
+          780
+        ],
+        "width": 780,
+        "height": 1688
+      },
+      {
+        "src": "/media/stackd/mobile-03",
+        "widths": [
+          780
+        ],
+        "width": 780,
+        "height": 1688
+      }
+    ]
+  },
+  "field-theory": {
+    "poster": {
+      "src": "/media/field-theory/poster-1280",
+      "width": 1280,
+      "height": 720
+    },
+    "preview": {
+      "src": "/media/field-theory/preview",
+      "width": 1280,
+      "height": 720,
+      "duration": 12.37,
+      "mp4KB": 1096,
+      "webmKB": 1026
+    },
+    "film": {
+      "src": "/media/field-theory/film",
+      "width": 1920,
+      "height": 1080,
+      "duration": 12.37,
+      "mp4KB": 5519,
+      "webmKB": 5220
+    },
+    "hero": {
+      "src": "/media/field-theory/hero",
+      "widths": [
+        1920,
+        960
+      ],
+      "width": 1920,
+      "height": 1080
+    },
+    "gallery": [
+      {
+        "src": "/media/field-theory/gallery/01",
+        "widths": [
+          1920,
+          960
+        ],
+        "width": 1920,
+        "height": 1080
+      },
+      {
+        "src": "/media/field-theory/gallery/02",
+        "widths": [
+          1920,
+          960
+        ],
+        "width": 1920,
+        "height": 1080
+      },
+      {
+        "src": "/media/field-theory/gallery/03",
+        "widths": [
+          1920,
+          960
+        ],
+        "width": 1920,
+        "height": 1080
+      },
+      {
+        "src": "/media/field-theory/gallery/04",
+        "widths": [
+          1920,
+          960
+        ],
+        "width": 1920,
+        "height": 1080
+      },
+      {
+        "src": "/media/field-theory/gallery/05",
+        "widths": [
+          1920,
+          960
+        ],
+        "width": 1920,
+        "height": 1080
+      }
+    ],
+    "mobile": [
+      {
+        "src": "/media/field-theory/mobile-01",
+        "widths": [
+          780
+        ],
+        "width": 780,
+        "height": 1688
+      },
+      {
+        "src": "/media/field-theory/mobile-02",
+        "widths": [
+          780
+        ],
+        "width": 780,
+        "height": 1688
+      },
+      {
+        "src": "/media/field-theory/mobile-03",
+        "widths": [
+          780
+        ],
+        "width": 780,
+        "height": 1688
+      }
+    ]
+  },
+  "retro-desk": {
+    "poster": {
+      "src": "/media/retro-desk/poster-1280",
+      "width": 1280,
+      "height": 720
+    },
+    "preview": {
+      "src": "/media/retro-desk/preview",
+      "width": 1280,
+      "height": 720,
+      "duration": 15.53,
+      "mp4KB": 1111,
+      "webmKB": 1071
+    },
+    "film": {
+      "src": "/media/retro-desk/film",
+      "width": 1920,
+      "height": 1080,
+      "duration": 15.53,
+      "mp4KB": 5433,
+      "webmKB": 5229
+    },
+    "hero": {
+      "src": "/media/retro-desk/hero",
+      "widths": [
+        1920,
+        960
+      ],
+      "width": 1920,
+      "height": 1080
+    },
+    "gallery": [
+      {
+        "src": "/media/retro-desk/gallery/01",
+        "widths": [
+          1920,
+          960
+        ],
+        "width": 1920,
+        "height": 1080
+      },
+      {
+        "src": "/media/retro-desk/gallery/02",
+        "widths": [
+          1920,
+          960
+        ],
+        "width": 1920,
+        "height": 1080
+      },
+      {
+        "src": "/media/retro-desk/gallery/03",
+        "widths": [
+          1920,
+          960
+        ],
+        "width": 1920,
+        "height": 1080
+      },
+      {
+        "src": "/media/retro-desk/gallery/04",
+        "widths": [
+          1920,
+          960
+        ],
+        "width": 1920,
+        "height": 1080
+      },
+      {
+        "src": "/media/retro-desk/gallery/05",
+        "widths": [
+          1920,
+          960
+        ],
+        "width": 1920,
+        "height": 1080
+      }
+    ],
+    "mobile": [
+      {
+        "src": "/media/retro-desk/mobile-01",
+        "widths": [
+          780
+        ],
+        "width": 780,
+        "height": 1688
+      },
+      {
+        "src": "/media/retro-desk/mobile-02",
+        "widths": [
+          780
+        ],
+        "width": 780,
+        "height": 1688
+      },
+      {
+        "src": "/media/retro-desk/mobile-03",
+        "widths": [
+          780
+        ],
+        "width": 780,
+        "height": 1688
+      }
+    ]
+  },
+  "halo": {
+    "poster": {
+      "src": "/media/halo/poster-1280",
+      "width": 1280,
+      "height": 720
+    },
+    "preview": {
+      "src": "/media/halo/preview",
+      "width": 1280,
+      "height": 720,
+      "duration": 12.03,
+      "mp4KB": 1106,
+      "webmKB": 1062
+    },
+    "film": {
+      "src": "/media/halo/film",
+      "width": 1920,
+      "height": 1080,
+      "duration": 12.03,
+      "mp4KB": 5447,
+      "webmKB": 5177
+    },
+    "hero": {
+      "src": "/media/halo/hero",
+      "widths": [
+        1920,
+        960
+      ],
+      "width": 1920,
+      "height": 1080
+    },
+    "gallery": [
+      {
+        "src": "/media/halo/gallery/01",
+        "widths": [
+          1920,
+          960
+        ],
+        "width": 1920,
+        "height": 1080
+      },
+      {
+        "src": "/media/halo/gallery/02",
+        "widths": [
+          1920,
+          960
+        ],
+        "width": 1920,
+        "height": 1080
+      },
+      {
+        "src": "/media/halo/gallery/03",
+        "widths": [
+          1920,
+          960
+        ],
+        "width": 1920,
+        "height": 1080
+      },
+      {
+        "src": "/media/halo/gallery/04",
+        "widths": [
+          1920,
+          960
+        ],
+        "width": 1920,
+        "height": 1080
+      },
+      {
+        "src": "/media/halo/gallery/05",
+        "widths": [
+          1920,
+          960
+        ],
+        "width": 1920,
+        "height": 1080
+      }
+    ],
+    "mobile": [
+      {
+        "src": "/media/halo/mobile-01",
+        "widths": [
+          780
+        ],
+        "width": 780,
+        "height": 1688
+      },
+      {
+        "src": "/media/halo/mobile-02",
+        "widths": [
+          780
+        ],
+        "width": 780,
+        "height": 1688
+      },
+      {
+        "src": "/media/halo/mobile-03",
+        "widths": [
+          780
+        ],
+        "width": 780,
+        "height": 1688
+      }
+    ]
+  },
+  "portfolio": {
+    "poster": {
+      "src": "/media/portfolio/poster-1280",
+      "width": 1280,
+      "height": 720
+    },
+    "preview": {
+      "src": "/media/portfolio/preview",
+      "width": 1280,
+      "height": 720,
+      "duration": 16.03,
+      "mp4KB": 1108,
+      "webmKB": 1045
+    },
+    "film": {
+      "src": "/media/portfolio/film",
+      "width": 1920,
+      "height": 1080,
+      "duration": 16.03,
+      "mp4KB": 5428,
+      "webmKB": 5168
+    },
+    "hero": {
+      "src": "/media/portfolio/hero",
+      "widths": [
+        1920,
+        960
+      ],
+      "width": 1920,
+      "height": 1080
+    },
+    "gallery": [
+      {
+        "src": "/media/portfolio/gallery/01",
+        "widths": [
+          1920,
+          960
+        ],
+        "width": 1920,
+        "height": 1080
+      },
+      {
+        "src": "/media/portfolio/gallery/02",
+        "widths": [
+          1920,
+          960
+        ],
+        "width": 1920,
+        "height": 1080
+      },
+      {
+        "src": "/media/portfolio/gallery/03",
+        "widths": [
+          1920,
+          960
+        ],
+        "width": 1920,
+        "height": 1080
+      },
+      {
+        "src": "/media/portfolio/gallery/04",
+        "widths": [
+          1920,
+          960
+        ],
+        "width": 1920,
+        "height": 1080
+      }
+    ],
+    "mobile": [
+      {
+        "src": "/media/portfolio/mobile-01",
+        "widths": [
+          780
+        ],
+        "width": 780,
+        "height": 1688
+      },
+      {
+        "src": "/media/portfolio/mobile-02",
+        "widths": [
+          780
+        ],
+        "width": 780,
+        "height": 1688
+      },
+      {
+        "src": "/media/portfolio/mobile-03",
+        "widths": [
+          780
+        ],
+        "width": 780,
+        "height": 1688
+      }
+    ]
+  }
+}
