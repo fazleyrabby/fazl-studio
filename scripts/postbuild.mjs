@@ -1,4 +1,5 @@
-// After `react-router build`: write sitemap.xml and point robots.txt at it.
+// After `react-router build`: add a real 404 page, write sitemap.xml and point
+// robots.txt at it.
 import fs from "node:fs/promises";
 import path from "node:path";
 import { siteUrl } from "./site-url.mjs";
@@ -14,6 +15,10 @@ async function routes(dir, base = "") {
   }
   return found;
 }
+
+// Static hosts serve /404.html with a 404 status for unknown paths. The SPA
+// shell boots there and the client router renders the not-found route.
+await fs.copyFile(path.join(out, "__spa-fallback.html"), path.join(out, "404.html"));
 
 if (!url) {
   console.warn("postbuild: no site URL (set VITE_SITE_URL). Skipping sitemap.xml; canonical and OG URLs are relative.");
