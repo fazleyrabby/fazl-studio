@@ -30,15 +30,17 @@ async function image(src, outBase, widths, quality = { avif: 50, webp: 78 }) {
   return out;
 }
 
-async function clip(master, outBase, width, height, targetKB) {
-  const dur = Number(probe(master, 'format=duration') || execFileSync('ffprobe', ['-v', 'error', '-show_entries', 'format=duration', '-of', 'csv=p=0', master]).toString());
+async function clip(master, outBase, width, height, targetKB, seconds, start = 0) {
+  const full = Number(probe(master, 'format=duration') || execFileSync('ffprobe', ['-v', 'error', '-show_entries', 'format=duration', '-of', 'csv=p=0', master]).toString());
+  const dur = seconds ? Math.min(seconds, full - start) : full - start;
+  const trim = [...(start ? ['-ss', String(start)] : []), ...(seconds ? ['-t', String(dur)] : [])];
   const kbps = Math.floor((targetKB * 8) / dur);
   const vf = `scale=${width}:${height}:flags=lanczos,fps=30,format=yuv420p`;
   const log = path.join(os.tmpdir(), `ff2pass-${process.pid}`);
-  ff(['-i', master, '-vf', vf, '-c:v', 'libx264', '-preset', 'slow', '-b:v', `${kbps}k`, '-pass', '1', '-passlogfile', log, '-an', '-f', 'mp4', '/dev/null']);
-  ff(['-i', master, '-vf', vf, '-c:v', 'libx264', '-preset', 'slow', '-profile:v', 'high', '-b:v', `${kbps}k`, '-pass', '2', '-passlogfile', log, '-an', '-movflags', '+faststart', `${outBase}.mp4`]);
-  ff(['-i', master, '-vf', vf, '-c:v', 'libvpx-vp9', '-b:v', `${kbps}k`, '-row-mt', '1', '-cpu-used', '2', '-pass', '1', '-passlogfile', log, '-an', '-f', 'null', '/dev/null']);
-  ff(['-i', master, '-vf', vf, '-c:v', 'libvpx-vp9', '-b:v', `${kbps}k`, '-row-mt', '1', '-cpu-used', '2', '-pass', '2', '-passlogfile', log, '-an', `${outBase}.webm`]);
+  ff([...trim, '-i', master, '-vf', vf, '-c:v', 'libx264', '-preset', 'slow', '-b:v', `${kbps}k`, '-pass', '1', '-passlogfile', log, '-an', '-f', 'mp4', '/dev/null']);
+  ff([...trim, '-i', master, '-vf', vf, '-c:v', 'libx264', '-preset', 'slow', '-profile:v', 'high', '-b:v', `${kbps}k`, '-pass', '2', '-passlogfile', log, '-an', '-movflags', '+faststart', `${outBase}.mp4`]);
+  ff([...trim, '-i', master, '-vf', vf, '-c:v', 'libvpx-vp9', '-b:v', `${kbps}k`, '-row-mt', '1', '-cpu-used', '2', '-pass', '1', '-passlogfile', log, '-an', '-f', 'null', '/dev/null']);
+  ff([...trim, '-i', master, '-vf', vf, '-c:v', 'libvpx-vp9', '-b:v', `${kbps}k`, '-row-mt', '1', '-cpu-used', '2', '-pass', '2', '-passlogfile', log, '-an', `${outBase}.webm`]);
   return { width, height, duration: Number(dur.toFixed(2)), mp4KB: await kb(`${outBase}.mp4`), webmKB: await kb(`${outBase}.webm`) };
 }
 
@@ -58,12 +60,15 @@ for (const p of projects) {
 
   // poster = first frame of the clip, so poster → video is seamless
   const posterPng = path.join(src, 'poster.png');
-  ff(['-i', master, '-frames:v', '1', '-update', '1', posterPng]);
+  const start = p.clipStart ?? 0;
+  ff([...(start ? ['-ss', String(start)] : []), '-i', master, '-frames:v', '1', '-update', '1', posterPng]);
   await image(posterPng, path.join(out, 'poster'), [1280], { avif: 45, webp: 74 });
   entry.poster = { src: `${base}/poster-1280`, width: 1280, height: 720 };
 
-  entry.preview = { src: `${base}/preview`, ...(await clip(master, path.join(out, 'preview'), 1280, 720, 1100)) };
+  // a supplied screencast may be longer than a preview should be: the preview takes its opening seconds
+  entry.preview = { src: `${base}/preview`, ...(await clip(master, path.join(out, 'preview'), 1280, 720, 1100, p.previewSeconds, start)) };
   if (mw >= 1920) entry.film = { src: `${base}/film`, ...(await clip(master, path.join(out, 'film'), 1920, 1080, 5400)) };
+  else if (p.previewSeconds) entry.film = { src: `${base}/film`, ...(await clip(master, path.join(out, 'film'), mw, mh, 4200, undefined, start)) };
 
   const stills = (await fs.readdir(path.join(src, 'stills'))).sort();
   const desktop = stills.filter((f) => f.startsWith('desktop-'));

@@ -128,6 +128,35 @@ const entries: Entry[] = [
     },
   },
   {
+    slug: "pocket-atlas",
+    title: "Pocket Atlas",
+    kind: "work",
+    tier: "featured",
+    year: "2026",
+    category: "Illustrated travel site",
+    summary: "Small-group trips sold like a picture book. Poke the map, pack the bag, drag the postcards, book a ticket.",
+    stack: ["React", "GSAP", "Lenis", "React Router", "Tailwind CSS", "Vite"],
+    tags: ["motion", "interactive"],
+    liveUrl: "https://pocket-atlas-wander.vercel.app",
+    theme: { accent: "#d24a1c", background: "#c6e4dc", foreground: "#1b2f44" },
+    alts: [
+      "Pocket Atlas hero: Pack light. Wander far. over an illustrated lake with pines, mountains and a canoeist",
+      "An illustrated island map with six pins beside a card for the Lantern Lake Paddle trip",
+      "Trips people brag about: three tilted trip cards with stamps reading New, Few spots and Guide pick",
+      "Close view of the trip cards for Lantern Lake Paddle, Three Peaks Ramble and Heron Marsh Safari",
+      "What do I bring: twelve packable items beside a backpack with a counter",
+      "Postcards from travelers: a stack of postcards with a Next postcard button",
+    ],
+    notes: {
+      concept:
+        "A travel company for people who like maps, mud and a proper lunch. Everything is drawn: the lake, the island map, the trip cards, even the cursor, which is a compass.",
+      motion:
+        "Each section is something to do, not only something to read. Pins on the map open trips, twelve items tap into a backpack that counts them, postcards drag off a stack, and a booking ends with a stamped ticket.",
+      build:
+        "React with GSAP and Lenis. The illustrations are SVG written as components, so there is no photography and no image weight. It is a demo site and the places are invented.",
+    },
+  },
+  {
     slug: "field-theory",
     title: "FIELD / THEORY",
     kind: "work",

@@ -14,6 +14,8 @@ const plan = {
   'field-theory': { desktop: [0, 0.125, 0.375, 0.5, 0.75, 0.875], mobile: [0, 0.2, 0.4] },
   villa: { desktop: [0.5, 0, 0.25, 0.625], mobile: [0, 0.2, 0.55] },
   portfolio: { desktop: [0, 0.125, 0.375, 0.5, 0.875], mobile: [0, 0.4, 0.8] },
+  // park: the site draws its own compass cursor, so keep the pointer out of frame
+  'pocket-atlas': { desktop: [0, 0.25, 0.375, 0.5, 0.625, 0.875], mobile: [0, 0.2, 0.6], park: true },
 };
 // Retro Desk has no scroll: each still is an object focus.
 const deskObjects = { desktop: [null, 'crt', 'floppy', 'notebook', 'window', 'phone'], mobile: [null, 'crt', 'window'] };
@@ -48,6 +50,7 @@ for (const p of projects) {
     } else {
       const max = await maxScroll(page);
       const fractions = plan[p.slug][kind];
+      if (plan[p.slug].park) await page.mouse.move(size.width - 2, size.height - 2);
       // visit in scroll order, but keep file numbering in plan order
       const order = fractions.map((f, i) => ({ f, i })).sort((a, b) => a.f - b.f);
       for (const { f, i } of order) {

@@ -593,5 +593,110 @@
         "height": 1688
       }
     ]
+  },
+  "pocket-atlas": {
+    "poster": {
+      "src": "/media/pocket-atlas/poster-1280",
+      "width": 1280,
+      "height": 720
+    },
+    "preview": {
+      "src": "/media/pocket-atlas/preview",
+      "width": 1280,
+      "height": 720,
+      "duration": 12,
+      "mp4KB": 1070,
+      "webmKB": 1050
+    },
+    "film": {
+      "src": "/media/pocket-atlas/film",
+      "width": 1280,
+      "height": 720,
+      "duration": 31.17,
+      "mp4KB": 4122,
+      "webmKB": 4082
+    },
+    "hero": {
+      "src": "/media/pocket-atlas/hero",
+      "widths": [
+        1920,
+        960
+      ],
+      "width": 1920,
+      "height": 1080
+    },
+    "gallery": [
+      {
+        "src": "/media/pocket-atlas/gallery/01",
+        "widths": [
+          1920,
+          960
+        ],
+        "width": 1920,
+        "height": 1080
+      },
+      {
+        "src": "/media/pocket-atlas/gallery/02",
+        "widths": [
+          1920,
+          960
+        ],
+        "width": 1920,
+        "height": 1080
+      },
+      {
+        "src": "/media/pocket-atlas/gallery/03",
+        "widths": [
+          1920,
+          960
+        ],
+        "width": 1920,
+        "height": 1080
+      },
+      {
+        "src": "/media/pocket-atlas/gallery/04",
+        "widths": [
+          1920,
+          960
+        ],
+        "width": 1920,
+        "height": 1080
+      },
+      {
+        "src": "/media/pocket-atlas/gallery/05",
+        "widths": [
+          1920,
+          960
+        ],
+        "width": 1920,
+        "height": 1080
+      }
+    ],
+    "mobile": [
+      {
+        "src": "/media/pocket-atlas/mobile-01",
+        "widths": [
+          780
+        ],
+        "width": 780,
+        "height": 1688
+      },
+      {
+        "src": "/media/pocket-atlas/mobile-02",
+        "widths": [
+          780
+        ],
+        "width": 780,
+        "height": 1688
+      },
+      {
+        "src": "/media/pocket-atlas/mobile-03",
+        "widths": [
+          780
+        ],
+        "width": 780,
+        "height": 1688
+      }
+    ]
   }
 }

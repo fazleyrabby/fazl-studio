@@ -18,6 +18,9 @@ export const projects = [
   { slug: 'retro-desk', folder: '3dRetroDeskPortfolio', url: 'https://retro-desk-portfolio.vercel.app' },
   { slug: 'halo', folder: '3DFanLanding', url: 'https://halo-fan.vercel.app' },
   { slug: 'portfolio', folder: 'Sites/astro-portfolio', url: 'https://fazleyrabbi.xyz' },
+  // Clip is supplied by Fazley (pocket-atlas-screencast.mp4), not recorded here.
+  // It opens on a blank frame and the site's loader wipe, so derivatives start after it.
+  { slug: 'pocket-atlas', folder: 'creative-site', url: 'https://pocket-atlas-wander.vercel.app', clipStart: 1.3, previewSeconds: 12 },
 ];
 
 export const GPU_ARGS = ['--use-angle=metal', '--enable-gpu', '--ignore-gpu-blocklist', '--enable-unsafe-swiftshader'];

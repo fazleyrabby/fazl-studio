@@ -13,6 +13,7 @@ const cards = [
   { slug: 'halo', title: 'HALO' },
   { slug: 'stackd', title: 'STACKD' },
   { slug: 'retro-desk', title: 'RETRO DESK' },
+  { slug: 'pocket-atlas', title: 'POCKET ATLAS' },
   { slug: 'field-theory', title: 'FIELD / THEORY' },
   { slug: 'portfolio', title: 'FAZLEYRABBI.XYZ' },
   { slug: 'villa', title: 'VILLA' },
